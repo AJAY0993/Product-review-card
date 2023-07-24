@@ -1,0 +1,222 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+     clear: both;
+}
+
+/************************* pre start ********************** */
+*,
+*::before,
+*::after {
+     box-sizing: border-box;
+}
+
+/* Custom Properties, update these for your own design */
+
+:root {
+     --ff-primary: 'Montserrat', sans-serif;
+     ;
+     --ff-secondary: 'Fraunces', serif;
+
+     --fw-reg: 300;
+     --fw-bold: 900;
+     --clr-cyan: rgb(60, 128, 103);
+     --clr-dark-cyan: hsl(157, 31%, 24%);
+     --clr-cream: hsl(30, 38%, 92%);
+     --clr-dark-grayish-blue: hsl(228, 12%, 48%);
+     --clr-very-dark-blue: hsl(212, 21%, 14%);
+     --clr-accent: #16e0bd;
+
+     --fs-h1: 3rem;
+     --fs-h2: 2.25rem;
+     --fs-h3: 1.25rem;
+     --fs-body: 1rem;
+}
+
+@media (min-width: 800px) {
+     :root {
+          --fs-h1: 4.5rem;
+          --fs-h2: 3.75rem;
+          --fs-h3: 1.5rem;
+          --fs-body: 1.125rem;
+     }
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     background-color: var(--clr-cream);
+     font-family: var(--ff-primary);
+     padding: 20px 6px;
+}
+
+main {
+     width: 100%;
+     max-width: 800px;
+     border-radius: 2rem;
+
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     /* border: 2px solid black; */
+     align-self: center;
+     margin: 8rem auto;
+     margin-bottom: 1.5rem;
+
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {}
+
+section {
+     width: 50%;
+}
+
+img {
+     height: 100%;
+     width: 100%;
+     border-top-left-radius: 2rem;
+     border-bottom-left-radius: 2rem;
+}
+
+.mobile__img {
+     display: none;
+}
+
+.product__info {
+     padding: 1.9rem;
+     background-color: white;
+     border-top-right-radius: 2rem;
+     border-bottom-right-radius: 2rem;
+     color: var(--clr-dark-grayish-blue);
+}
+
+.section__intro {
+     letter-spacing: .26rem;
+     font-size: 1.3rem;
+     margin: 0;
+}
+
+.sub__intro {
+     font-size: 3rem;
+     font-family: var(--ff-secondary);
+     font-weight: 700;
+     color: black;
+}
+
+p {
+     line-height: 2rem;
+     font-size: 1.2rem;
+     margin: .3rem 0;
+}
+
+span {
+     display: inline-block;
+     margin: .6rem 0;
+
+}
+
+.discounted__price {
+     color: var(--clr-cyan);
+     font-size: 2.5rem;
+     font-family: var(--ff-secondary);
+     font-weight: 700;
+     margin-right: 1.6rem;
+}
+
+.real__price {
+     font-size: var(--fs-h3);
+     text-decoration: line-through;
+}
+
+
+
+a {
+     display: block;
+     text-decoration: none;
+     text-align: center;
+     width: 100%;
+     background-color: var(--clr-cyan);
+     margin: 1.2rem 0;
+     color: white;
+     border-radius: 12px;
+     padding: .8rem 0;
+
+
+}
+
+a:hover {
+     background-color: hsl(157, 31%, 24%);
+}
+
+footer {}
+
+p.challenge {
+     margin: 0 auto;
+     font-size: 1rem;
+     text-align: center;
+}
+
+p.challenge span {
+     color: var(--clr-dark-cyan);
+     font-weight: 800;
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media (max-width: 800px) {
+     html {
+          font-size: 12px;
+     }
+
+     main {
+          flex-direction: column;
+          width: 600px;
+          max-width: 100%;
+     }
+
+     section {
+          width: 100%;
+     }
+
+     .desktop__img {
+          display: none;
+     }
+
+     .mobile__img {
+          display: block;
+     }
+
+     img {
+          border-top-left-radius: 1rem;
+          border-bottom-left-radius: 0px;
+          border-top-right-radius: 1rem;
+     }
+
+     .product__info {
+
+          border-top-right-radius: 0px;
+          border-bottom-right-radius: 1rem;
+          border-bottom-left-radius: 1rem;
+
+     }
+}
